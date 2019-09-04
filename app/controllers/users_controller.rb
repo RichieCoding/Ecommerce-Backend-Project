@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
 
   def index 
-    user = User.all
-
-    render json: user
+    if current_user.admin?
+      user = User.all
+      render json: user
+    else
+      render json: { errors: user.errors.full_messages }
+    end
   end
 
   def create
@@ -13,6 +16,12 @@ class UsersController < ApplicationController
     else
       render json: { errors: user.errors.full_messages }
     end
+  end
+
+  def update 
+    user = User.find(params[:id])
+    user.update(user_params)
+    render json: user
   end
 
   def profile
