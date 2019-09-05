@@ -9,6 +9,8 @@ class Product < ApplicationRecord
       "c"
     elsif self.size == "XLarge"
       "d"
+    else
+      "e"
     end
   end
   
