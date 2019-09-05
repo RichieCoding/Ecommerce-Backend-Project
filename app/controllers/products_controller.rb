@@ -9,6 +9,15 @@ class ProductsController < ApplicationController
     render json: product
   end
 
+  def create
+    if current_user.admin?
+      product = Product.create(product_params)
+      render json: product
+    else
+      render json: { errors: user.errors.full_messages }
+    end
+  end
+
   def update 
     if current_user.admin?
       product = Product.find(params[:id])
@@ -17,6 +26,13 @@ class ProductsController < ApplicationController
     else
       render json: { errors: user.errors.full_messages }
     end
+  end
+
+  def destroy
+      product = Product.find(params[:id])
+      # byebug
+      product.destroy
+      render json: product
   end
 
 
