@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
       product = Product.create(product_params)
       render json: product
     else
-      render json: { errors: user.errors.full_messages }
+      render json: { errors: product.errors.full_messages }
     end
   end
 
@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
       product.update(product_params)
       render json: product
     else
-      render json: { errors: user.errors.full_messages }
+      render json: { errors: product.errors.full_messages }
     end
   end
 
@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.permit(:name, :size, :color, :quantity, :price, :variantID, :description, :imageUrl)
+    params.permit(:id, :name, :size, :color, :quantity, :price, :varientId, :description, :imageUrl, :created_at, :updated_at)
   end
 
 
