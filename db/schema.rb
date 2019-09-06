@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_023516) do
     t.string "size"
     t.integer "quantity"
     t.integer "price"
-    t.string "varientID"
+    t.string "varientId"
     t.string "description"
     t.string "imageUrl"
     t.datetime "created_at", null: false
