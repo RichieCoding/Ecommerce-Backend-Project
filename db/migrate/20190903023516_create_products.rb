@@ -6,7 +6,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :size
       t.integer :quantity
       t.integer :price
-      t.string :varientID
+      t.string :varientId
       t.string :description
       t.string :imageUrl
 
