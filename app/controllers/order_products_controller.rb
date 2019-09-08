@@ -5,6 +5,4 @@ class OrderProductsController < ApplicationController
     render json: order_products, include: ['product']
   end
 
-  
-
 end
