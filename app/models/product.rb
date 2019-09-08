@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  has_many :order_products
 
   def size_label 
     if self.size == "Small"
