@@ -12,6 +12,7 @@ pickleMedium = Product.create( name: "Pickle Rick T-Shirt", size: "Medium", colo
   This Season 3 teaser T-shirt from Adult Swim's Rick and Morty features a Pickle Rick's Kosher Pickles logo design on front. Grab this tee now and get ready to find out why Rick has pickled himself when the series returns this summer!")
 rickNeonSmall = Product.create( name: "Rick and Morty Neon Tropical T-Shirt", size: "Small", color: 'white', quantity: 50, price: 22, varientId: "Rick02", imageUrl: "https://hottopic.scene7.com/is/image/HotTopic/11938005_hi?$pdp_hero_zoom$", description: "Rick and Morty must have traveled through a tropical portal because this tee features Rick wearing a Hawaiian shirt and lei and holding a fruity drink on the front and Morty on the back.")
 rickNeonMedium = Product.create( name: "Rick and Morty Neon Tropical T-Shirt", size: "Medium", color: 'white', quantity: 50, price: 22, varientId: "Rick02", imageUrl: "https://hottopic.scene7.com/is/image/HotTopic/11938005_hi?$pdp_hero_zoom$", description: "Rick and Morty must have traveled through a tropical portal because this tee features Rick wearing a Hawaiian shirt and lei and holding a fruity drink on the front and Morty on the back.")
+
 rickPop = Product.create( name: "Funko Rick and Morty Pop Schwifty", size: "One Size", color: 'N/A', quantity: 50, price: 15, varientId: "Pop01", imageUrl: "https://hottopic.scene7.com/is/image/HotTopic/11854435_hi?$pdp_hero_zoom$", description: 'Rick is ready to perform "Get Schwifty" for the alien head, with microphone in hand. From Rick and Morty, he has been given a fun and funky makeover as a vinyl figure.')
 pillow = Product.create( name: "Rick and Morty PillowCase Set", size: "One Size", color: 'Black', quantity: 50, price: 15, varientId: "Acc01", imageUrl: "https://hottopic.scene7.com/is/image/HotTopic/11869885_hi?$pdp_hero_zoom$", description: 'Get schwifty even in your dreams! This pillowcase set from Rick and Morty features Morty on one side and Rick on the other.')
 portalGun = Product.create( name: "Portal Gun Real Thing", size: "One Size", color: 'White', quantity: 50, price: 350, varientId: "Acc02", imageUrl: "https://hottopic.scene7.com/is/image/HotTopic/11913474_hi?$pdp_hero_zoom$", description: "You know the worst part about inventing teleportation? Suddenly, you're able to travel the whole galaxy, and the first thing you learn is, you're the last guy to invent teleportation.")
@@ -35,7 +36,6 @@ OrderProduct.create(order: order4, product: pillow)
 OrderProduct.create(order: order4, product: portalGun)
 OrderProduct.create(order: order4, product: rickPop)
 OrderProduct.create(order: order4, product: meekseeksBox)
-
 
 
 
