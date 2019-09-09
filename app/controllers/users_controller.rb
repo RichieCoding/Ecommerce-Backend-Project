@@ -1,12 +1,21 @@
 class UsersController < ApplicationController
 
   def index 
-    # if current_user.admin?
-      user = User.all
+    if current_user.admin?
+      users = User.all
+      render json: users, include: ['orders']
+    else
+      render json: { errors: 'user.errors.full_messages' }
+    end
+  end
+
+  def show
+    if current_user
+      user = User.find(params[:id])
       render json: user, include: ['orders']
-    # else
-    #   render json: { errors: 'user.errors.full_messages' }
-    # end
+    else
+      render json: { errors: 'user.errors.full_messages' }
+    end
   end
 
   def create
