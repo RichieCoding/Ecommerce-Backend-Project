@@ -1,18 +1,18 @@
 class UsersController < ApplicationController
 
   def index 
-    if current_user.admin?
+    # if current_user.admin?
       users = User.all
-      render json: users, include: ['orders']
-    else
-      render json: { errors: 'user.errors.full_messages' }
-    end
+      render json: users, include: ['orders', 'cart']
+    # else
+    #   render json: { errors: 'user.errors.full_messages' }
+    # end
   end
 
   def show
     if current_user
       user = User.find(params[:id])
-      render json: user, include: ['orders']
+      render json: user, include: ['orders', 'cart']
     else
       render json: { errors: 'user.errors.full_messages' }
     end
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
+    user.create_cart
     if user.valid?
       render json: { token: encode_token(user_payload(user)) }
     else
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def profile
-    render json: current_user
+    render json: current_user, include: [:cart, :orders]
   end
 
   private
