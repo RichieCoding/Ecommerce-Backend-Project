@@ -26,6 +26,8 @@ order2 = Order.create(user: hamza)
 order3 = Order.create(user: garrett)
 order4 = Order.create(user: alex)
 
+cart1 = Cart.create(user: alex)
+
 OrderProduct.create(order: order1, product: pickleSmall)
 OrderProduct.create(order: order1, product: rickNeonSmall)
 OrderProduct.create(order: order1, product: rickNeonMedium)
@@ -36,6 +38,9 @@ OrderProduct.create(order: order4, product: pillow)
 OrderProduct.create(order: order4, product: portalGun)
 OrderProduct.create(order: order4, product: rickPop)
 OrderProduct.create(order: order4, product: meekseeksBox)
+
+CartItem.create(cart: cart1, product: rickPop)
+CartItem.create(cart: cart1, product: pillow)
 
 
 
