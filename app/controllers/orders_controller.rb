@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-    if current_user.admin?
+    if logged_in_user.admin?
       orders = Order.all.order(created_at: :desc)
       render json: orders, methods: [:products, :user, :date, :time], :except => [:created_at, :updated_at]
     else 
@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
   end 
 
   def show
-    if current_user
+    if logged_in_user
       order = Order.find(params[:id])
       render json: order, methods: [:products, :user, :date, :time], :except => [:created_at, :updated_at]
     else

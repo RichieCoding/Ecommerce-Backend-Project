@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index 
-    # if current_user.admin?
+    # if logged_in_user.admin?
       users = User.all
       render json: users, include: ['orders', 'cart']
     # else
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user
+    if logged_in_user
       user = User.find(params[:id])
       render json: user, include: ['orders', 'cart']
     else
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def profile
-    render json: current_user, include: [:cart, :orders]
+    render json: logged_in_user, include: [:cart, :orders]
   end
 
   private

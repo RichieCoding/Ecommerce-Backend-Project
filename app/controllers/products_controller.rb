@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    if current_user.admin?
+    if logged_in_user.admin?
       product = Product.create(product_params)
       render json: product
     else
@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
   end
 
   def update 
-    if current_user.admin?
+    if logged_in_user.admin?
       product = Product.find(params[:id])
       product.update(product_params)
       render json: product
