@@ -12,14 +12,14 @@ class CartItemsController < ApplicationController
     render json: cart_item, methods: [:products]
   end
 
-  # def create
-  #   if current_user
-  #     cart_item = CartItem.create(product_params)
-  #     render json: cart_item
-  #   else
-  #     render json: { errors: product.errors.full_messages }
-  #   end
-  # end
+  def create
+    # if logged_in_user
+      cart_item = CartItem.create(cart_item_params)
+      render json: cart_item
+    # else
+    #   render json: { errors: product.errors.full_messages }
+    # end
+  end
 
   def update 
     cart_item = CartItem.find(params[:id])
@@ -29,6 +29,19 @@ class CartItemsController < ApplicationController
     render json: cart_item
   end
 
+  def destroy
+    cart_item = CartItem.find(params[:id])
+    cart_item.destroy
+    render json: cart_item
+  end
+
+
+
+  private
+
+  def cart_item_params
+    params.permit(:id, :cart_id, :product_id, :created_at, :updated_at)
+  end
   
 
 end
