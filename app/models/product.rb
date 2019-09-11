@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   has_many :order_products
   has_many :cart_items
 
+
   def size_label 
     if self.size == "Small"
       "a"
