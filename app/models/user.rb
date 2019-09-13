@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_one :cart
 
   def create_cart
-    user = self.id
+    user = self.id 
     Cart.create(user_id: user)
   end
 

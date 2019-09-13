@@ -18,6 +18,11 @@ class OrdersController < ApplicationController
     end
   end
 
+  # def earnings
+  #   orders = Order.all
+  #   byebug
+  # end
+
   
 
 end

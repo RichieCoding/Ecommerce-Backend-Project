@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   get "/profile", to: "users#profile"
   post "/checkout", to: "carts#checkout"
+  get "/earnings", to: "order_products#earnings"
 end

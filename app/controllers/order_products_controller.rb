@@ -5,4 +5,14 @@ class OrderProductsController < ApplicationController
     render json: order_products, include: ['product']
   end
 
+  def earnings
+    total = 0
+    OrderProduct.all.each do |orderData|
+      orderData.product.each do |product|
+        total += product.price
+      end
+    end
+    return total
+  end
+
 end
