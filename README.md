@@ -1,24 +1,26 @@
-# README
+# Shoppie (Backend)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An ecommerce site where an admin can sign in and manage their ecommerce site. They can track, add, and edit their inventory and view orders that are created by customers. A customer can view products, log in and place order.
 
-Things you may want to cover:
+### `Goal`
 
-* Ruby version
+Create a Rails restfulAPI with endpoints for users, products, cart and orders
 
-* System dependencies
+## `Getting Started`
 
-* Configuration
+1. Run bundle install for dependencies
+2. Run "rails db:migrate" to migrate your database
+3. Run "rails db:seed" to seed various products and users
+4. Run "rails s" to run your server
 
-* Database creation
+Go to https://github.com/RichieCoding/Ecommerce-Backend-Project for frontend.
 
-* Database initialization
+Open [http://localhost:3000] if you want to view it in the browser.
 
-* How to run the test suite
+## 'Built With'
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* React
+* SCSS
+* Ruby on Rails 
+* PostgreSQL
+* JSON Web Token
