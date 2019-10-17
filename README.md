@@ -13,7 +13,7 @@ Create a Rails restfulAPI with endpoints for users, products, cart and orders
 3. Run "rails db:seed" to seed various products and users
 4. Run "rails s" to run your server
 
-Go to https://github.com/RichieCoding/Ecommerce-Backend-Project for frontend.
+Go to https://github.com/RichieCoding/Ecommerce-Front-End for frontend.
 
 Open [http://localhost:3000] if you want to view it in the browser.
 
